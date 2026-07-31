@@ -23,7 +23,6 @@ setup(
         "certifi",
         "pycryptodome",
         "DateTime",
-        "setuptools<=81.0.0",
         "six",
         "urllib3-future",
         "jwcrypto",
