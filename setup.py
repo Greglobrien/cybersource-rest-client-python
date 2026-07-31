@@ -28,7 +28,8 @@ setup(
         "jwcrypto",
         "cryptography",
         "pgpy",
-        "standard-imghdr; python_version >= '3.13'"
+        "standard-imghdr; python_version >= '3.13'",
+        "importlib_metadata; python_version < '3.8'"
     ],
     packages=find_packages(),
     include_package_data=True,

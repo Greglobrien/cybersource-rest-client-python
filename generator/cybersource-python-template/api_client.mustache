@@ -8,7 +8,13 @@ import json
 import mimetypes
 import tempfile
 import threading
-from importlib.metadata import version, PackageNotFoundError
+# Use stdlib importlib.metadata instead of pkg_resources: pkg_resources was
+# removed in setuptools 82, and it was the only thing pulling setuptools in at
+# runtime, so setuptools is no longer a runtime dependency.
+try:
+    from importlib.metadata import version, PackageNotFoundError
+except ImportError:  # Python < 3.8
+    from importlib_metadata import version, PackageNotFoundError
 
 from datetime import date, datetime
 
